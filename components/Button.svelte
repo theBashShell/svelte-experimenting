@@ -1,14 +1,20 @@
 <script>
 	let count = 0;
+	import { createEventDispatcher } from "svelte";
+
+	let dispatch = createEventDispatcher();
 
 	function handleClick() {
 	  count += 1;
+	  dispatch("message", {
+	    text: "hello"
+	  });
 	}
 </script>
 
 <style>
 	button {
-	  background: #ff3e00;
+	  background: #644236;
 	  color: white;
 	  border: none;
 	  padding: 8px 12px;
